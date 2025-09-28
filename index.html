@@ -5,63 +5,87 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Echoes Within</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
-</head>
-<body class="dream-bg text-gray-800">
 
-  <header class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-purple-100/50 shadow-lg">
-    <div class="flex h-14 items-center px-6 sm:px-12">
-      <a href="#" class="mr-6 flex items-center space-x-2 font-bold text-xl text-purple-700 dream-glow">Echoes Within</a>
-      <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
-        <a href="#home" class="text-gray-700 hover:text-purple-600 transition dream-fade">Home</a>
-        <a href="#about" class="text-gray-600 hover:text-blue-600 transition dream-fade">About</a>
-        <a href="#share" class="text-gray-600 hover:text-pink-600 transition dream-fade">Share</a>
+  <style>
+    /* Optional subtle glow animation for the header title */
+    @keyframes pulseGlow {
+      0%, 100% { text-shadow: 0 0 12px rgba(147,51,234,0.3); }
+      50% { text-shadow: 0 0 24px rgba(147,51,234,0.5); }
+    }
+    .animate-pulse-glow {
+      animation: pulseGlow 2.5s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-xl border-b border-purple-200/30 shadow-md">
+    <div class="header-container flex flex-wrap h-20 items-center px-12 sm:px-24 max-w-7xl mx-auto justify-between">
+      
+      <!-- Title -->
+      <h1 class="font-heading dream-glow text-4xl sm:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-indigo-500 tracking-wide animate-pulse-glow flex-shrink-0">
+        Echoes Within
+      </h1>
+      
+      <!-- Navigation -->
+      <nav class="flex items-center space-x-12 text-base font-medium mt-2 sm:mt-0">
+        <a href="#home" class="nav-link hover:text-purple-500 transition-all duration-300 ease-in-out">Home</a>
+        <a href="#share" class="nav-link hover:text-pink-500 transition-all duration-300 ease-in-out">Share</a>
       </nav>
+      
     </div>
   </header>
 
-  <footer class="fixed bottom-0 w-full bg-white/70 backdrop-blur-md border-t border-purple-100/50 text-center py-4 z-50">
-    <p class="text-gray-500 text-sm font-body italic">&copy; 2025 Echoes Within — every thought deserves a place in the dream.</p>
-  </footer>
-
-  <main class="pt-16 pb-20">
-    
-    <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center relative dream-section">
-      <h1 class="text-4xl sm:text-5xl font-heading text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
-        Welcome to <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">Echoes Within</span>
-      </h1>
-      <p class="mt-4 max-w-2xl text-gray-600 text-lg font-body">A creative anonymous space to share your unspoken thoughts, favorite quotes, poems, and heartfelt words.</p>
+  <!-- Main Content -->
+  <main>
+    <!-- Home Section -->
+    <section id="home" class="scroll-section">
+      <div class="container">
+        <h1 class="font-heading gradient-text">
+          Welcome to <span class="gradient-text-pink">Echoes Within</span>
+        </h1>
+        <p class="font-body">
+          A gentle space where words find a home — whether thoughts, quotes, poems, or feelings left unspoken. Here, your voice matters, even in silence.
+          Every piece you share here will be posted on our Instagram, so your echo can touch and inspire others.
+        </p>
+      </div>
     </section>
 
-    <section id="about" class="min-h-screen flex flex-col justify-center items-center text-center bg-white/70 backdrop-blur-sm rounded-2xl p-6 mx-4 dream-section">
-      <h2 class="text-3xl font-bold mb-4 font-heading dream-glow text-gray-800">About Echoes Within</h2>
-      <p class="max-w-2xl text-gray-600 text-lg font-body leading-relaxed">
-        Echoes Within is more than a page — it's a sanctuary for silent voices. Share your unspoken thoughts anonymously.
-      </p>
-    </section>
-
-    <section id="share" class="min-h-screen flex flex-col justify-center items-center text-center relative dream-section">
-      <h2 class="text-3xl font-bold mb-4 font-heading dream-glow text-gray-800">Share Your Voice</h2>
-      <form action="https://formspree.io/f/mwprkapb" method="POST" class="w-full max-w-md mx-auto space-y-4">
-        <select name="category" required class="w-full rounded-xl border border-purple-200/50 px-4 py-3 text-sm font-body bg-white/80 backdrop-blur-sm dream-focus">
-          <option value="" disabled selected>Choose a category</option>
-          <option value="Unsaid Thought">Unsaid Thought</option>
-          <option value="Quote">Quote</option>
-          <option value="Poem">Poem</option>
-          <option value="Message">Message</option>
-        </select>
-        <textarea name="content" placeholder="Write here..." class="w-full rounded-xl border border-purple-200/50 px-4 py-3 text-sm min-h-[120px] font-body bg-white/80 backdrop-blur-sm dream-focus resize-none" required></textarea>
-        <input type="text" name="Name" placeholder="Name (optional)" class="w-full rounded-xl border border-purple-200/50 px-4 py-3 text-sm font-body bg-white/80 backdrop-blur-sm dream-focus">
-        <div class="flex justify-between space-x-2">
-          <button type="reset" class="w-1/2 bg-gray-200/70 text-gray-600 px-4 py-3 rounded-lg hover:bg-gray-300/70 transition dream-hover font-medium">Clear</button>
-          <button type="submit" class="w-1/2 bg-gradient-to-r from-purple-500 to-blue-500 text-white px-4 py-3 rounded-lg hover:from-purple-600 hover:to-blue-600 transition dream-hover font-medium shadow-lg">Submit</button>
-        </div>
-      </form>
+    <!-- Share Section -->
+    <section id="share" class="scroll-section">
+      <div class="container">
+        <h2 class="font-heading dream-glow">Share Your Voice</h2>
+        <form action="https://formspree.io/f/mwprkapb" method="POST">
+          <select name="category" required class="input-field">
+            <option value="" disabled selected>Choose where your echo belongs</option>
+            <option value="Unsaid Thought">Unsaid Thought (words you’ve never spoken)</option>
+            <option value="Quote">Quote (words you’ve never spoken)</option>
+            <option value="Poem">Poem (your heart written in verses)</option>
+            <option value="Message">Message (something for someone, or for yourself)</option>
+          </select>
+          <textarea name="content" placeholder="Write here..." class="input-field" required></textarea>
+          <input type="text" name="Name" placeholder="Name (optional)" class="input-field">
+          <div class="form-buttons">
+            <button type="reset" class="btn-clear">Clear</button>
+            <button type="submit" class="btn-submit">Submit</button>
+          </div>
+        </form>
+      </div>
     </section>
   </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Echoes Within — every thought deserves a place in the dream.</p>
+    <p>Your words are safe here. Whether signed or anonymous, <br>
+      each echo will be respected and gently carried to our Instagram.</p>
+  </footer>
+
 </body>
 </html>
